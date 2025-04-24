@@ -1,0 +1,203 @@
+:root {
+    --primary: #0a0a1a;
+    --secondary: #0c0e13;
+    --accent: #e0f2fe;
+    --highlight: #38bdf8;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--primary);
+    color: var(--accent);
+    scroll-behavior: smooth;
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--highlight);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Logo Styles */
+.logo-container {
+    display: flex;
+    align-items: left;
+    height: 3rem; /* Adjust this value based on your navbar height */
+}
+
+.logo-img {
+    width: 4.5rem; 
+    position: absolute;
+    display: flex;
+    left: 2rem;
+}
+
+/* For smaller screens if needed */
+@media (max-width: 640px) {
+    .logo-container {
+        height: 2.5rem;
+    }
+    .logo-img {
+        max-height: 2.5rem;
+    }
+}
+
+.portfolio-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(56, 189, 248, 0.1), 0 10px 10px -5px rgba(56, 189, 248, 0.04);
+}
+
+.logo-animation {
+    animation: logoEntrance 1.5s ease-out forwards;
+}
+
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px) rotate(-15deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+/* Mobile menu styles */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.open {
+    max-height: 500px; /* Adjust based on your content */
+}
+
+.mobile-menu-content {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.mobile-menu.open .mobile-menu-content {
+    opacity: 1;
+}
+
+.section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+.floating {
+    animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+.contact-input {
+    background-color: rgba(224, 242, 254, 0.05);
+    border: 1px solid rgba(224, 242, 254, 0.1);
+    transition: all 0.3s ease;
+}
+
+.contact-input:focus {
+    outline: none;
+    border-color: var(--highlight);
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+}
+
+/* Enhanced blur effect for navbar */
+.navbar-blur {
+    background-color: rgba(2, 4, 7, 0.425) !important;
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+/* Hero section background */
+.hero-bg {
+    background: linear-gradient(135deg, rgba(10, 10, 26, 0.9) 0%, rgba(17, 24, 39, 0.8) 100%);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* Scroll down arrow */
+.scroll-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+}
+
+/* Custom sky blue theme adjustments */
+.bg-highlight {
+    background-color: var(--highlight);
+}
+
+.text-highlight {
+    color: var(--highlight);
+}
+
+.border-highlight {
+    border-color: var(--highlight);
+}
+
+.hover\:bg-highlight:hover {
+    background-color: var(--highlight);
+}
+
+.hover\:text-highlight:hover {
+    color: var(--highlight);
+}
+
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--highlight), #60a5fa);
+}
