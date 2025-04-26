@@ -39,10 +39,11 @@ body {
 }
 
 .logo-img {
-    width: 4.5rem; 
+    width: 4rem; 
     position: absolute;
     display: flex;
     left: 2rem;
+    top: 1rem;
 }
 
 /* For smaller screens if needed */
